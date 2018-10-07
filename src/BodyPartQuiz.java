@@ -43,7 +43,7 @@ public class BodyPartQuiz {
 
 			// 5. Check their answer. If they guessed correctly:
 			// -- Tell them they are right and increase the score by 1
-
+			
 			// 6. Otherwise:
 			// -- Tell them they are wrong and who the person is
 
