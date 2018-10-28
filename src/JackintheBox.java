@@ -11,9 +11,15 @@ import javax.swing.JPanel;
 
 public class JackintheBox {
 public static void main(String[] args) {
+	
 	JackintheBox box = new JackintheBox();
 }
 	public JackintheBox() {
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		JButton button = new JButton("Suprise");
+		frame.add(panel);
+		frame.add(button);
 		showPicture("jackInTheBox.png");
 		playSound("homer-woohoo.wav");
 
