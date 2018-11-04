@@ -1,4 +1,6 @@
 import java.applet.AudioClip;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
 
 import javax.swing.Icon;
@@ -9,7 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class JackintheBox {
+public class JackintheBox implements ActionListener {
+	int count = 0;
 public static void main(String[] args) {
 	
 	JackintheBox box = new JackintheBox();
@@ -17,12 +20,12 @@ public static void main(String[] args) {
 	public JackintheBox() {
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
-		JButton button = new JButton("Suprise");
+		JButton button = new JButton("Surprise");
 		frame.add(panel);
-		frame.add(button);
-		showPicture("jackInTheBox.png");
-		playSound("homer-woohoo.wav");
-
+		panel.add(button);
+		button.addActionListener(this);
+		frame.pack();
+		frame.setVisible(true);
 		// TODO Auto-generated constructor stub
 	}
 	private void showPicture(String fileName) { 
@@ -63,6 +66,15 @@ public static void main(String[] args) {
 	     } catch (Exception e) {
 	          e.printStackTrace();
 	     }
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		count++;
+		if(count==5) {
+			showPicture("jackInTheBox.png");
+			playSound("homer-woohoo.wav");
+		}
 	}
 
 }
