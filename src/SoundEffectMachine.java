@@ -13,7 +13,6 @@ public class SoundEffectMachine implements ActionListener {
 	JPanel panel = new JPanel();
 	JButton leftButton = new JButton();
 	JButton rightButton = new JButton();
-	JButton thirdButton = new JButton();
 	JButton fourthButton = new JButton();
 
 	public static void main(String[] args) {
@@ -25,12 +24,10 @@ public class SoundEffectMachine implements ActionListener {
 		frame.add(panel);
 		panel.add(leftButton);
 		panel.add(rightButton);
-		panel.add(thirdButton);
 		panel.add(fourthButton);
 		frame.setVisible(true);
 		rightButton.addActionListener(this);
 		leftButton.addActionListener(this);
-		thirdButton.addActionListener(this);
 		fourthButton.addActionListener(this);
 		frame.pack();
 
@@ -49,8 +46,6 @@ public class SoundEffectMachine implements ActionListener {
 			playSound("organpop.wav");
 		} else if (press == rightButton) {
 			playSound("ping.wav");
-		} else if (press == thirdButton) {
-			playSound("cmajor.wav");
 		} else if (press == fourthButton) {
 			playSound("bass.wav");
 		}
